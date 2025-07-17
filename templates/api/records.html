@@ -1,0 +1,54 @@
+{% extends 'api/base.html' %}
+
+{% block content %}
+<h2>Saved Wheel Specifications</h2>
+
+<div class="table-wrapper">
+  <table>
+    <tr>
+      <th>Form Number</th>
+      <th>Submitted By</th>
+      <th>Submitted Date</th>
+      <th>Tread Diameter</th>
+      <th>Last Shop Issue</th>
+      <th>Condemning Dia</th>
+      <th>Wheel Gauge</th>
+      <th>Same Axle</th>
+      <th>Same Bogie</th>
+      <th>Same Coach</th>
+      <th>Wheel Profile</th>
+      <th>WWP</th>
+      <th>Bearing Seat Dia</th>
+      <th>Roller Outer Dia</th>
+      <th>Roller Bore Dia</th>
+      <th>Roller Width</th>
+      <th>Axle Box Dia</th>
+      <th>Disc Width</th>
+      <th>Status</th>
+    </tr>
+    {% for record in records %}
+    <tr>
+      <td>{{ record.formNumber }}</td>
+      <td>{{ record.submittedBy }}</td>
+      <td>{{ record.submittedDate }}</td>
+      <td>{{ record.treadDiameterNew }}</td>
+      <td>{{ record.lastShopIssueSize }}</td>
+      <td>{{ record.condemningDia }}</td>
+      <td>{{ record.wheelGauge }}</td>
+      <td>{{ record.variationSameAxle }}</td>
+      <td>{{ record.variationSameBogie }}</td>
+      <td>{{ record.variationSameCoach }}</td>
+      <td>{{ record.wheelProfile }}</td>
+      <td>{{ record.intermediateWWP }}</td>
+      <td>{{ record.bearingSeatDiameter }}</td>
+      <td>{{ record.rollerBearingOuterDia }}</td>
+      <td>{{ record.rollerBearingBoreDia }}</td>
+      <td>{{ record.rollerBearingWidth }}</td>
+      <td>{{ record.axleBoxHousingBoreDia }}</td>
+      <td>{{ record.wheelDiscWidth }}</td>
+      <td>{{ record.status }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}
